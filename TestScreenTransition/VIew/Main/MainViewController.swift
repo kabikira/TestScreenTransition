@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
 //        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? FristDetailViewController {
 //            navigationController?.pushViewController(vc, animated: true)
 //        }
-        // 同じストーリーボードにあるときStoryboardIdentifierで設定する
+        // 同じストーリーボードに遷移したい画面があるとき
         if let vc = storyboard?.instantiateViewController(withIdentifier: "FirstDetail") as? FristDetailViewController {
             navigationController?.pushViewController(vc, animated: true)
             // モダールで遷移
@@ -34,6 +34,7 @@ class MainViewController: UIViewController {
     
     
     @IBAction func goThirdDetail(_ sender: Any) {
+        // 違うストーリーボードに遷移するとき
         if let vc = UIStoryboard(name: "ThirdDetail", bundle: nil).instantiateInitialViewController() as? ThirdDetailViewController {
             navigationController?.pushViewController(vc, animated: true)
         }
